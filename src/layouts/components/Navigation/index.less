@@ -1,0 +1,156 @@
+@colorBase: #ffffff;
+
+.navigation {
+  background: var(--color-text-45);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  .header {
+    color: @colorBase;
+    background-color: #3662e7;
+    padding: 0 16px 20px;
+
+    .menus {
+      height: 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: fade(@colorBase, 65%);
+
+      .siteName {
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        padding: 6px 16px;
+        border-radius: 6px;
+        color: fade(@colorBase, 65%);
+
+        &:hover {
+          background-color: @colorBase;
+          color: #3662e7;
+        }
+
+        &.active {
+          background-color: @colorBase;
+          color: #3662e7;
+        }
+      }
+    }
+
+    .nickName {
+      vertical-align: middle;
+      font-size: 12px;
+      margin-right: 12px;
+      max-width: 84px;
+    }
+
+    .quickAccess {
+      font-size: 16px;
+      font-weight: 500;
+      color: fade(@colorBase, 85%);
+      margin-bottom: 12px;
+    }
+
+    .quickLink {
+      background-color: fade(@colorBase, 15%);
+      color: fade(@colorBase, 65%);
+      border-radius: 4px;
+      padding: 6px 16px;
+      font-weight: 500;
+      cursor: pointer;
+      display: block;
+    }
+  }
+
+  .panelData {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 96px);
+    overflow: auto;
+    top: 96px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+
+    .box {
+      background-color: @colorBase;
+      position: relative;
+      padding: 0 16px;
+
+      .title {
+        margin: 16px 0;
+      }
+
+      .list {
+        margin: 12px 0;
+
+        .item {
+          display: flex;
+          align-items: center;
+          padding: 12px 0 12px 12px;
+          border-radius: 2px;
+          border: 1px solid var(--color-text-06);
+          cursor: pointer;
+
+          .logo {
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            border-radius: 2px;
+            margin-right: 10px;
+          }
+
+          .container {
+            flex-grow: 1;
+            overflow: hidden;
+
+            .name {
+              font-weight: 500;
+              color: var(--color-text-85);
+            }
+
+            .id {
+              margin-top: 4px;
+              font-size: 12px;
+              color: var(--color-text-45);
+            }
+          }
+
+          .favorite {
+            font-size: 18px;
+            color: var(--color-primary);
+            padding: 12px;
+          }
+
+          .favorite.unActive {
+            display: none;
+          }
+
+          &:hover {
+            .favorite.unActive {
+              display: block;
+            }
+          }
+        }
+      }
+
+      .close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        font-size: 16px;
+        color: var(--color-text-45);
+      }
+    }
+
+    .mask {
+      width: 100%;
+      flex: 1;
+      background: var(--color-text-45);
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "name": "setting",
+  "version": "1.0.0",
+  "private": true,
+  "author": "hzm <1481010383@qq.com>",
+  "scripts": {
+    "analyze": "cross-env ANALYZE=1 max build",
+    "build": "npm run build:prod",
+    "build:dev": "cross-env UMI_ENV=env-dev max build",
+    "build:per": "cross-env UMI_ENV=env-per max build",
+    "build:prod": "cross-env UMI_ENV=env-prod max build",
+    "build:sit": "cross-env UMI_ENV=env-sit max build",
+    "dev": "max dev",
+    "format": "prettier --cache --write .",
+    "postinstall": "max setup",
+    "prepare": "husky install",
+    "setup": "max setup",
+    "start": "npm run dev",
+    "start:dev": "cross-env UMI_ENV=env-dev max dev",
+    "start:per": "cross-env UMI_ENV=env-per max dev",
+    "start:prod": "cross-env UMI_ENV=env-prod max dev",
+    "start:sit": "cross-env UMI_ENV=env-sit max dev"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.1.4",
+    "@ant-design/pro-components": "^2.6.4",
+    "@umijs/max": "^4.0.72",
+    "ahooks": "^3.7.8",
+    "antd": "5.6.4",
+    "crypto-js": "^4.1.1",
+    "react-draggable": "^4.4.5"
+  },
+  "devDependencies": {
+    "@types/crypto-js": "^4.1.1",
+    "@types/lodash": "^4.14.195",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "cross-env": "^7.0.3",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0",
+    "prettier-plugin-organize-imports": "^3",
+    "prettier-plugin-packagejson": "^2",
+    "typescript": "^4.9.5"
+  }
+}

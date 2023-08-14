@@ -1,0 +1,28 @@
+.dragHandle {
+  cursor: grab;
+  color: var(--color-text-25);
+  font-size: 20px;
+}
+
+.linkData {
+  display: flex;
+  align-items: center;
+
+  .linkName {
+    padding: 0 4px;
+    flex: 1;
+  }
+
+  .del {
+    display: none;
+    color: var(--color-error);
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  &:hover {
+    .del {
+      display: block;
+    }
+  }
+}

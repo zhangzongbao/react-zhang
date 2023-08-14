@@ -1,0 +1,438 @@
+@import 'antd/dist/reset.css';
+
+// 全局样式定义 继承v5 https://ant.design/docs/react/customize-theme-cn
+:root {
+  --color-success: @colorSuccess;
+  --color-primary: @colorPrimary;
+  --color-white: @colorBgBase;
+  --color-error: @colorError;
+  --color-warning: @colorWarning;
+  --color-bg-layout: @colorBgLayout;
+  --color-bg-primary: @colorPrimaryBg;
+  --color-text-100: @colorTextBase;
+  --color-text-88: #1f1f1f;
+  --color-text-85: @colorText;
+  --color-text-65: @colorTextSecondary;
+  --color-text-45: @colorTextTertiary;
+  --color-text-25: @colorTextQuaternary;
+  --color-text-15: @colorFill;
+  --color-text-06: @colorFillSecondary;
+  --color-text-04: @colorFillTertiary;
+  --color-text-02: @colorFillQuaternary;
+  --under-review: #12b8d7;
+
+  background-color: var(--color-bg-layout);
+  color: var(--color-text-85);
+  font-size: ~'@{fontSize}px';
+  font-family: @fontFamily;
+}
+
+/* ----- 重置 pro 的样式 -------- */
+// 禁止表格换行
+.ant-table-cell {
+  white-space: nowrap;
+}
+
+// 弹窗 距离
+.ant-modal .ant-modal-header {
+  margin-bottom: 16px;
+}
+
+// 设置table数据量不够的时候不要出现滚动条 如果要固定列 可能会有bug 需要额外处理
+.ant-table-body {
+  // overflow-y: auto !important;
+}
+
+// 设置表单内边距
+.ant-pro-page-container-children-container {
+  padding-block: 8px;
+}
+
+// 高级列表表头不换行
+.ant-pro-table-list-toolbar-container {
+  flex-direction: row;
+}
+
+// 左边查询区域不换行
+.ant-pro-table-list-toolbar-left {
+  max-width: none;
+
+  .ant-checkbox-wrapper {
+    white-space: nowrap;
+  }
+}
+
+// setting 区域不换行
+.ant-pro-table-list-toolbar-right {
+  flex-wrap: nowrap;
+  flex: 0;
+}
+
+// 颜色选择器 还原样式
+.sketch-picker {
+  input[id^='rc-editable-input-'] {
+    box-sizing: content-box;
+  }
+}
+
+/* 覆盖浏览器样式 */
+
+// 定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+// 拖动 层级样式显示
+.row-dragging {
+  background: var(--color-text-04);
+  z-index: 1000;
+
+  td {
+    padding: 12px 8px;
+  }
+}
+
+// 定义滚动条轨道 内阴影+圆角
+::-webkit-scrollbar-track {
+  // background-color: var(--color-text-04);
+  background: white;
+}
+
+// 定义滑块 内阴影+圆角
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-text-15);
+  border-radius: 8px;
+}
+
+/* --------- 自定义样式 ----------- */
+
+// 居中容器
+.center-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentcolor;
+  overflow: hidden;
+}
+
+// 全局颜色
+.color-title {
+  color: #8c8c8c;
+}
+
+.color-success {
+  color: var(--color-success);
+}
+
+.color-primary {
+  color: var(--color-primary);
+}
+
+.color-warning {
+  color: var(--color-warning);
+}
+
+.color-error {
+  color: var(--color-error);
+}
+
+.color-white {
+  color: var(--color-white);
+}
+
+.color-text-100 {
+  color: var(--color-text-100);
+}
+
+.color-text-88 {
+  color: var(--color-text-88);
+}
+
+.color-text-85 {
+  color: var(--color-text-85);
+}
+
+.color-text-65 {
+  color: var(--color-text-65);
+}
+
+.color-text-45 {
+  color: var(--color-text-45);
+}
+
+.color-text-25 {
+  color: var(--color-text-25);
+}
+
+.color-text-15 {
+  color: var(--color-text-15);
+}
+
+.color-text-06 {
+  color: var(--color-text-06);
+}
+
+// 全局背景色
+.color-bg-layout {
+  background-color: var(--color-bg-layout);
+}
+
+/* 文字方向 */
+.text-c {
+  text-align: center;
+}
+
+.text-l {
+  text-align: left;
+}
+
+.text-r {
+  text-align: right;
+}
+
+.float-l {
+  float: left;
+}
+
+.float-r {
+  float: right;
+}
+
+/* 字体大小 */
+.font-9 {
+  font-size: 9px !important;
+}
+
+.font-10 {
+  font-size: 10px !important;
+}
+
+.font-11 {
+  font-size: 11px !important;
+}
+
+.font-12 {
+  font-size: 12px !important;
+}
+
+.font-13 {
+  font-size: 13px !important;
+}
+
+.font-14 {
+  font-size: 14px !important;
+}
+
+.font-15 {
+  font-size: 15px !important;
+}
+
+.font-16 {
+  font-size: 16px !important;
+}
+
+.font-17 {
+  font-size: 17px !important;
+}
+
+.font-18 {
+  font-size: 18px !important;
+}
+
+.font-19 {
+  font-size: 19px !important;
+}
+
+.font-20 {
+  font-size: 20px !important;
+}
+
+.font-21 {
+  font-size: 21px !important;
+}
+
+.font-22 {
+  font-size: 22px !important;
+}
+
+.font-24 {
+  font-size: 24px !important;
+}
+
+.font-32 {
+  font-size: 32px !important;
+}
+
+.font-w6 {
+  font-weight: 600;
+}
+
+.font-w5 {
+  font-weight: 500;
+}
+
+.font-w4 {
+  font-weight: 400;
+}
+
+/* 内外边距 */
+.padding6 {
+  padding: 6px;
+}
+
+.padding15 {
+  padding: 15px;
+}
+
+.padding12 {
+  padding: 12px;
+}
+
+.padding-tb-24 {
+  padding: 24px 0;
+}
+
+.padding-lr-24 {
+  padding: 0 24px;
+}
+
+.margin-left6 {
+  margin-left: 6px;
+}
+
+.margin-left4 {
+  margin-left: 4px;
+}
+
+.margin-left8 {
+  margin-left: 8px;
+}
+
+.margin-left10 {
+  margin-left: 10px;
+}
+
+.margin-left12 {
+  margin-left: 12px;
+}
+
+.margin-left15 {
+  margin-left: 15px;
+}
+
+.margin-right4 {
+  margin-right: 4px;
+}
+
+.margin-right8 {
+  margin-right: 8px;
+}
+
+.margin-right16 {
+  margin-right: 16px;
+}
+
+.margin15 {
+  margin: 15px;
+}
+
+.margin-top2 {
+  margin-top: 2px;
+}
+
+.margin-top4 {
+  margin-top: 4px;
+}
+
+.margin-top6 {
+  margin-top: 6px;
+}
+
+.margin-top8 {
+  margin-top: 8px;
+}
+
+.margin-bottom8 {
+  margin-bottom: 8px;
+}
+
+.margin-bottom12 {
+  margin-bottom: 12px;
+}
+
+.margin-top10 {
+  margin-top: 10px;
+}
+
+.margin-bottom16 {
+  margin-bottom: 16px;
+}
+
+.margin-top15 {
+  margin-top: 15px;
+}
+
+.padding-bottom15 {
+  padding-bottom: 15px;
+}
+
+.padding-bottom24 {
+  padding-bottom: 24px;
+}
+
+.margin-c-h {
+  margin: 15px auto;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.border-r-2 {
+  border-radius: 2px;
+}
+
+.border-r-6 {
+  border-radius: 6px;
+}
+
+.border-r-8 {
+  border-radius: 8px;
+}
+
+.imgHeight {
+  height: 100%;
+}
+
+// 冻结按钮的颜色
+.freezeBtn {
+  color: var(--color-white) !important;
+  background-color: var(--color-warning) !important;
+  border-color: var(--color-warning) !important;
+}
+
+// 解决 "@ant-design/pro-components": "^2.4.8" 的bug
+//.ant-layout-has-sider {
+//  height: 100vh;
+//
+//  & > div:first-child {
+//    display: none !important;
+//  }
+//}
+
+// 修复 2.4.14 菜单样式不生效的问题
+.ant-menu-item-selected * {
+  color: var(--color-primary);
+}

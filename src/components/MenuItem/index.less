@@ -1,0 +1,23 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .favorite {
+    font-size: 18px;
+    color: var(--color-primary);
+    padding: 12px;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+
+  .favorite.unActive {
+    display: none;
+  }
+
+  &:hover {
+    .favorite.unActive {
+      display: block;
+    }
+  }
+}

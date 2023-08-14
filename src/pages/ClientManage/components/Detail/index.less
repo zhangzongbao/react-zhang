@@ -1,0 +1,59 @@
+.detailBox {
+  background: #fff;
+  height: calc(100vh - 48px);
+
+  header {
+    height: 72px;
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
+
+  & .head {
+    width: 72px;
+    height: 72px;
+    text-align: center;
+    line-height: 72px;
+  }
+
+  & .headerContent {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  & .content {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    // overflow: hidden;
+
+    & .contentItem {
+      flex: 1;
+      height: calc(100vh - 206px);
+    }
+  }
+
+  & .wechatBorder {
+    width: 100%;
+    min-height: 66px;
+    border: 1px solid var(--color-text-06);
+  }
+
+  & .imgDiv {
+    width: 72px;
+    height: 72px;
+    background: #fff;
+    border: 1px solid var(--color-text-15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+:global {
+  .ant-pro .ant-pro-layout .ant-pro-layout-content {
+    padding-inline: 0;
+    padding-block: 0;
+  }
+}
